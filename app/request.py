@@ -35,13 +35,17 @@ def process_results(news_list):
     '''
     news_results = []
     for news_item in news_list:
-        author = news_item.author
-        title = news_item.title
-        description = news_item.description
-        url = news_item.url
-        urlToImage = news_item.urlToImage
-        publishedAt = news_item.publishedAt
-        content = news_item.content
+        author = news_item.get('author')
+        title = news_item.get('title')
+        description = news_item.get('description')
+        url = news_item.get('url')
+        urlToImage = news_item.get('urlToImage')
+        publishedAt = news_item.get('publishedAt')
+        content = news_item.get('content')
+        
+        news_object = News(author, title, description, url, urlToImage, publishedAt, content)
+        
+        news_results.append(news_object)
         
     
             
