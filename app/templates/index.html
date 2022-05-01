@@ -8,5 +8,18 @@
 </head>
 <body>
     <h1>{{ message }}</h1>
+    <h1>Top Headlines</h1>
+    <ul>
+        {% for article in articles %}
+
+            <img src="{{ article.urlToImage }}" alt="">
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.description }}</p>
+            <p>{{ article.publishedAt }}</p>
+            <p>{{  article.content }}</p>
+
+
+        {% endfor %}
+    </ul>
 </body>
 </html>

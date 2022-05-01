@@ -2,13 +2,14 @@ from app import app
 import urllib.request,json
 from .models import news
 
+
 News = news.News
 
 #getting api key
-api_key = app.config('NEWS_API_KEY')
+api_key = 'fee3b3e955374e4e87747fef4b303740'
 
 #getting news base url
-base_url = app.config('NEWS_API_BASE_URL')
+base_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
 
 def get_news():
     '''
@@ -46,6 +47,7 @@ def process_results(news_list):
         news_object = News(author, title, description, url, urlToImage, publishedAt, content)
         
         news_results.append(news_object)
+    return news_results
         
     
             
