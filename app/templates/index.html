@@ -1,25 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Main page</h1>
-    
-   <ul>
-       {% for channel in channels %}
-            <li>
-                <h2>{{channel.name}}</h2>
-                <h2>{{channel.description}}</h2>
-                <h2>{{channel.id}}</h2>
-                <p>{{channel.url}}</p>
-               <a href="/source/{{channel.id}}">View Listed articles</a>
+{% extends 'base.html'%}
+
+
+
+    {% block content %}
+
+    <div class="container text-center mt-5">
+        <h4 mt-5>OUR NEWS SOURCES</h4><hr>
+    </div>
+    <div class="container row extra " style="height: 40vh;">
+        <div class="">
+        
+            {% for channel in channels %}
+            <ul class="row">
+            <li class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{channel.name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                  <p class="card-text">{{channel.description}}.</p>
+                  <a href="{{channel.url}}" class="card-link">Website</a>
+                  <a href="/source/{{channel.id}}" class="card-link">View articles</a>
+                </div>
             </li>
-       {% endfor %}
+            </ul>      
+            {% endfor %}
+            
        
-   </ul>
-</body>
-</html>
+    </div>
+    </div>
+   {% endblock %}

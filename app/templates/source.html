@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Movie page test</h1>
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Top headlines</h1>
     <ul>
         {% for media in medias %}
             <li>
@@ -15,10 +8,10 @@
                 <h3>{{ media.title }}</h3>
                 <p>{{ media.content }}</p>
                 <p>{{ media.publishedAt }}</p>
+                <p>{{ media.source.name }}</p>
             </li> 
 
 
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
