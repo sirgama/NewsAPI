@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=PT+Mono&display=swap');
+
 *{
     color:black;
 }
+h5 {
+    color: #b13cfd;
+    font-weight: bolder;
+}
+
+h1{
+    font-family: 'MedievalSharp', cursive;
+font-family: 'PT Mono', monospace;
+font-weight: bolder;
+}
+
 .scrolling-wrapper{
   display: flex;
   flex-direction: row;
