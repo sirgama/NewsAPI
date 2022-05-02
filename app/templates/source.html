@@ -1,17 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Top headlines</h1>
-    <ul>
+
+    <h3 >Latest Updates</h3>
+    
         {% for media in medias %}
-            <li>
-                <img src="{{ media.urlToImage }}" alt="">
-                <h3>{{ media.title }}</h3>
-                <p>{{ media.content }}</p>
-                <p>{{ media.publishedAt }}</p>
-                <p>{{ media.source.name }}</p>
-            </li> 
+        
+<div class="container text-center">
+          <div class="bg-image m-5">
+            <img
+              src="{{media.urlToImage}}"
+              class="img-fluid"
+              style="width: 100%; "
+              alt="Sample"
+            />
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); border-radius:20px; width:80vw;">
+              <div class="m-5 ">
+                <div class="m-5">
+                <div class=" m-5">
+
+                <div class="col text-center m-5 ">
+                <h5 class="row text-center text-white m-5 mt-5 d-flex align-items-end">{{media.title}}</h5>
+                
+                <a class=" text-center " href="{{media.url}}"><button type="button" class="btn btn-success btn-sm ">Read Full Article</button></a>
+                <div class=" text-center text-white">{{media.publishedAt}}</div> 
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+
+
+
+
+           
 
 
         {% endfor %}
-    </ul>
+    
 {% endblock %}
