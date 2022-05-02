@@ -2,6 +2,7 @@ class Sites:
     '''
     Returns all sites available
     '''
+    
     def __init__(self,id,name,description,url,category,language,country):
         self.id = id
         self.name = name
@@ -10,3 +11,5 @@ class Sites:
         self.category = category
         self.language = language
         self.country = country
+        
+    

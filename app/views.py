@@ -9,16 +9,18 @@ def index():
     '''
     returns the index page
     '''
-    news = get_news()
+    
     sites = get_sites()
-    sources = get_source()
+    
     message = 'Testing the news site'
-    return render_template('index.html', message= message, articles= news ,channels = sites, medias = sources)
+    return render_template('index.html', message= message,channels = sites)
 
-@app.route('/source/<int:source>')
-def source(source):
+@app.route('/source/<name>')
+def source(name):
     
     '''
     returns the source page
     '''
-    return render_template('source.html' )
+    sites = get_sites()
+    sources = get_source(name)
+    return render_template('source.html', medias=sources, channels = sites )

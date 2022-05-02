@@ -21,7 +21,7 @@ all_url = 'https://newsapi.org/v2/top-headlines?category={}&language=en&apiKey={
 source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
 
 #getting all available news sources
-sites_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
+sites_url = 'https://newsapi.org/v2/top-headlines/sources?language=en&apiKey={}'
 
 def get_news():
     '''
@@ -97,17 +97,17 @@ def process_results(sites_list):
         country = site_item.get('country')
         
         
-        sites_object = Sites(id,name,description,url,category,language,country)
+        sites_object = Sites(id, name, description, url, category, language, country)
         
         sites_results.append(sites_object)
     return sites_results
         
 
-def get_source(source):
+def get_source(name):
     '''
     Function that gets the json from all available sites from newsAPI
     '''
-    get_sources_url = source_url.format(source,api_key)
+    get_sources_url = source_url.format(name,api_key)
     
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -116,7 +116,7 @@ def get_source(source):
         sources_results = None
         
         if get_sources_response['articles']:
-            sources_results_list = get_sources_response['sources']
+            sources_results_list = get_sources_response['articles']
             
             sources_results = process_results(sources_results_list)
             
