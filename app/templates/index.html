@@ -12,11 +12,11 @@
         
             {% for channel in channels %}
             <ul class="">
-            <li class="card" style="width: 18rem;">
+            <li class="card" style="width: 15rem;height: 15rem;">
                 <div class="card-body">
                   <h5 class="card-title">{{channel.name}}</h5>
                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                  <p class="card-text">{{channel.description}}.</p>
+                  <p class="card-text" style="height: 7rem;overflow: hidden;">{{channel.description}}.</p>
                   <a href="{{channel.url}}" class="card-link">Website</a>
                   <a href="/source/{{channel.id}}" class="card-link">View articles</a>
                 </div>
