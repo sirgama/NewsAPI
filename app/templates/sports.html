@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<hr>
+<h3 style="color: #b13cfd;
+font-weight: bolder; border-bottom: 3px solid #b13cfd;">Trending in Sports</h3>
+</div>
+{% for sport in sports %}
+<div class="container">
+<div class="card bg-dark text-white mt-5">
+    <img src="{{sport.urlToImage}}" class="card-img img-fluid" alt="Stony Beach"/>
+    <div class="card-img-overlay">
+      <a href="{{sport.url}}"><h5 class="card-title text-white">{{sport.title}}</h5></a>
+      <p class="card-text text-white">{{sport.description}}</p>
+      </p>
+      
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+{% endblock %}
