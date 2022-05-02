@@ -10,13 +10,13 @@
     <h1>{{ message }}</h1>
     <h1>Top Headlines</h1>
     <ul>
-        {% for article in articles %}
+        {% for channel in channels %}
 
-            <img src="{{ article.urlToImage }}" alt="">
-            <h3>{{ article.title }}</h3>
-            <p>{{ article.description }}</p>
-            <p>{{ article.publishedAt }}</p>
-            <p>{{  article.content }}</p>
+            <img src="{{ channel.id }}" alt="">
+            <h3>{{ channel.name }}</h3>
+            <p>{{ channel.description }}</p>
+            <p>{{ channel.country }}</p>
+            
 
 
         {% endfor %}

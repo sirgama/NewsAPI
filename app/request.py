@@ -102,5 +102,45 @@ def process_results(sites_list):
         sites_results.append(sites_object)
     return sites_results
         
+
+def get_source(source):
+    '''
+    Function that gets the json from all available sites from newsAPI
+    '''
+    get_sources_url = source_url.format(source,api_key)
+    
+    with urllib.request.urlopen(get_sources_url) as url:
+        get_sources_data = url.read()
+        get_sources_response = json.loads(get_sources_data)
+        
+        sources_results = None
+        
+        if get_sources_response['articles']:
+            sources_results_list = get_sources_response['sources']
+            
+            sources_results = process_results(sources_results_list)
+            
+    return sources_results
+
+def process_results(sources_list):
+    '''
+    Function that processes the sources results and transfrms them into an object
+    '''
+    sources_results = []
+    for source_item in sources_list:
+        source = source_item.get('source')
+        author = source_item.get('author')
+        title = source_item.get('title')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        urlToImage = source_item.get('urlToImage')
+        publishedAt = source_item.get('publishedAt')
+        content = source_item.get('content')
+        
+        
+        sources_object = Source(source,author,title,description,url,urlToImage,publishedAt,content)
+        
+        sources_results.append(sources_object)
+    return sources_results
     
             
