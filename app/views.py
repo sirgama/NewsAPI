@@ -25,3 +25,8 @@ def source(name):
     sources = get_source(name)
     heading = name.upper()
     return render_template('source.html', medias=sources, head= heading)
+
+@app.route('/everything')
+def everything():
+    
+    return render_template('everything.html')
