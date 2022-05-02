@@ -11,6 +11,12 @@ api_key = 'fee3b3e955374e4e87747fef4b303740'
 #getting news base url
 base_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
 
+#evrything on news API
+all_url = 'https://newsapi.org/v2/everything?q={}&apiKey={}'
+
+#sources on news API
+source_url = 'https://newsapi.org/v2/top-headlines/sources?language=en&apiKey={}'
+
 def get_news():
     '''
     Function that gets the json from top headlines api
