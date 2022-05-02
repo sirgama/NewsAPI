@@ -181,9 +181,9 @@ def process_results(everything_list):
         content = source_item.get('content')
         
         if urlToImage:
-            sources_object = Source(source,author,title,description,url,urlToImage,publishedAt,content)
+            everything_object = Everything(author,title,description,url,urlToImage,publishedAt,content)
             
-            sources_results.append(sources_object)
-    return sources_results
+            everything_results.append(everything_object)
+    return everything_results
     
             
