@@ -8,5 +8,15 @@
 </head>
 <body>
     <h1>Movie page test</h1>
+    {% for media in medias %}
+
+            <img src="{{ channel.id }}" alt="">
+            <h3>{{ channel.name }}</h3>
+            <p>{{ channel.description }}</p>
+            <p>{{ channel.country }}</p>
+            
+
+
+        {% endfor %}
 </body>
 </html>
