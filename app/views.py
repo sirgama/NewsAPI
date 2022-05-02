@@ -23,4 +23,5 @@ def source(name):
     '''
     
     sources = get_source(name)
-    return render_template('source.html', medias=sources )
+    heading = name.upper()
+    return render_template('source.html', medias=sources, head= heading)
