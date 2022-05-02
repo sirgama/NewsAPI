@@ -21,9 +21,8 @@ font-weight: bolder;
   overflow-y: hidden;
   height: 45vh;
   width: 100%;
-  background: rgb(2,0,36);
-  background: linear-gradient(347deg, rgba(2,0,36,0.3617822128851541) 0%, rgba(9,9,121,0.1516981792717087) 0%, rgba(242,241,182,1) 38%);
-    
+  background: rgb(134,13,128);
+background: linear-gradient(90deg, rgba(134,13,128,0.8477766106442577) 0%, rgba(224,14,208,0.8981967787114846) 31%, rgba(255,0,136,0.8533788515406162) 54%, rgba(91,0,255,0.8533788515406162) 95%);
 }
 .image {
     border-radius: 10px;
