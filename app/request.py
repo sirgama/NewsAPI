@@ -1,15 +1,15 @@
 from app import app
 import urllib.request,json
-from .models import news,sites,source,everything
+from .models import News, Sites, Source, Everything
 
 
-News = news.News
-Sites = sites.Sites
-Source = source.Source
-Everything = everything.Everything
+# News = news.News
+# Sites = sites.Sites
+# Source = source.Source
+# Everything = everything.Everything
 
 #getting api key
-api_key = 'fee3b3e955374e4e87747fef4b303740'
+api_key = '8fa07fb5e25746778babb1bbccd84292'
 
 #getting news base url
 base_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
@@ -75,14 +75,14 @@ def get_sites():
         
         sites_results = None
         
-        if get_sites_response['sources']:
-            sites_results_list = get_sites_response['sources']
+        if get_sites_response["sources"]:
+            sites_results_list = get_sites_response["sources"];
             
-            sites_results = process_results(sites_results_list)
+            sites_results = process_sites(sites_results_list)
             
     return sites_results
 
-def process_results(sites_list):
+def process_sites(sites_list):
     '''
     Function that processes the sources results and transfrms them into an object
     '''
@@ -97,9 +97,9 @@ def process_results(sites_list):
         country = site_item.get('country')
         
         
-        sites_object = Sites(id, name, description, url, category, language, country)
+        site_object = Sites(id, name, description, url, category, language, country)
         
-        sites_results.append(sites_object)
+        sites_results.append(site_object)
     return sites_results
         
 

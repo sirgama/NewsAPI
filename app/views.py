@@ -13,7 +13,7 @@ def index():
     sites = get_sites()
     
     message = 'Testing the news site'
-    return render_template('index.html', message= message,channels = sites)
+    return render_template('index.html', message= message, channels=sites)
 
 @app.route('/source/<name>')
 def source(name):
@@ -21,6 +21,6 @@ def source(name):
     '''
     returns the source page
     '''
-    sites = get_sites()
+    
     sources = get_source(name)
-    return render_template('source.html', medias=sources, channels = sites )
+    return render_template('source.html', medias=sources )

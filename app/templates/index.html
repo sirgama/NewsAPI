@@ -9,14 +9,17 @@
 <body>
     <h1>Main page</h1>
     
-    <ul>
-        {% for test in channels %}
-            <h3>{{ test.name }}</h3>
-            <p>{{ test.url }}</p>
-            <p>{{test.country}}</p>
-            <p>{{test.description}}</p>
-           <a href="/sources/{{test.cat}}">Test link</a>
-        {% endfor %}
-    </ul>
+   <ul>
+       {% for channel in channels %}
+            <li>
+                <h2>{{channel.name}}</h2>
+                <h2>{{channel.description}}</h2>
+                <h2>{{channel.id}}</h2>
+                <p>{{channel.url}}</p>
+               <a href="/source/{{channel.id}}">View Listed articles</a>
+            </li>
+       {% endfor %}
+       
+   </ul>
 </body>
 </html>
