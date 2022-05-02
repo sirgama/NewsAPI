@@ -12,10 +12,13 @@ api_key = 'fee3b3e955374e4e87747fef4b303740'
 base_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
 
 #evrything on news API
-all_url = 'https://newsapi.org/v2/everything?q={}&apiKey={}'
+all_url = 'https://newsapi.org/v2/top-headlines?category={}&language=en&apiKey={}'
 
 #sources on news API
-source_url = 'https://newsapi.org/v2/top-headlines/sources?language=en&apiKey={}'
+source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+
+#getting all available news sources
+sites_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
 
 def get_news():
     '''
