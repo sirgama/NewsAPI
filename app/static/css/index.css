@@ -1,5 +1,11 @@
 
-.extra{
-    overflow-x: scroll;
-    overflow-y: hidden;
+.scrolling-wrapper{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 40vh;
+  width: 100%;
+
+    
 }
