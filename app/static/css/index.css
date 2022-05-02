@@ -1,4 +1,6 @@
-
+*{
+    color:black;
+}
 .scrolling-wrapper{
   display: flex;
   flex-direction: row;
@@ -48,3 +50,20 @@
       0 15px 24px var(--box-shadow-color);
   }
   
+
+.navbar{
+    color: rgb(15, 0, 75);
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+}
+.navbar li{
+    font-stretch: semi-expanded;
+    color: rgb(9, 0, 88) !important;
+    font-family: sans-serif;
+}
+.navbar li a:hover{
+    color: blue;
+    border-bottom: 3px solid blue;
+    border-radius: 10px;
+}

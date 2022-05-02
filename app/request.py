@@ -56,9 +56,10 @@ def process_results(news_list):
         publishedAt = news_item.get('publishedAt')
         content = news_item.get('content')
         
-        news_object = News(author, title, description, url, urlToImage, publishedAt, content)
-        
-        news_results.append(news_object)
+        if urlToImage:
+            news_object = News(author, title, description, url, urlToImage, publishedAt, content)
+            
+            news_results.append(news_object)
     return news_results
 
 
@@ -137,10 +138,10 @@ def process_results(sources_list):
         publishedAt = source_item.get('publishedAt')
         content = source_item.get('content')
         
-        
-        sources_object = Source(source,author,title,description,url,urlToImage,publishedAt,content)
-        
-        sources_results.append(sources_object)
+        if urlToImage:
+            sources_object = Source(source,author,title,description,url,urlToImage,publishedAt,content)
+            
+            sources_results.append(sources_object)
     return sources_results
     
             

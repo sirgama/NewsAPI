@@ -7,14 +7,14 @@
     <div class="container text-center mt-5">
         <h4 mt-5>OUR NEWS SOURCES</h4><hr>
     </div>
-    <div class="container" style="height: 40vh;">
+    <div class="container-fluid" style="height: 40vh;">
         <div class="scrolling-wrapper">
         
             {% for channel in channels %}
             <ul class="">
             <li class="card mt-3 mb-3" style="width: 15rem;height: 15rem;">
                 <div class="card-body ">
-                  <h6 class="card-title">{{channel.name}}</h6>
+                  <h6 class="card-title">{{channel.name}}</h6><hr>
                   <h6 class="card-subtitle mb-2 text-muted"></h6>
                   <p class="card-text" style="height: 7rem;overflow: hidden;">{{channel.description}}.</p>
                   <a href="{{channel.url}}" class="card-link">Website</a>
@@ -26,6 +26,34 @@
             
        
     </div>
+    </div>
+
+
+    <div class="container">
+        {% for update in updates %}
+        <div class="row">
+
+            <div class="col">
+                <div class="row">
+                    <div class="col-md-5"><img class="img-fluid" src="{{update.urlToImage}}" alt=""></div>
+
+                    <div class="col">
+                        <h4>{{update.title}}</h4>
+                        <h6>{{update.description}}</h6>
+                        <div class="row">
+                            <div class="col"><a href="{{update.url}}" class="btn btn-sm">Read Article</a></div>
+                            <div class="col">{{update.publishedAt}}</div>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+            
+
+
+        </div>
+        {% endfor %}
     </div>
 
    {% endblock %}

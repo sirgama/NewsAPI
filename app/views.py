@@ -11,9 +11,9 @@ def index():
     '''
     
     sites = get_sites()
-    
+    news = get_news()
     message = 'Testing the news site'
-    return render_template('index.html', message= message, channels=sites)
+    return render_template('index.html', message= message, channels=sites, updates = news)
 
 @app.route('/source/<name>')
 def source(name):
