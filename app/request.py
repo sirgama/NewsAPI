@@ -1,9 +1,11 @@
 from app import app
 import urllib.request,json
-from .models import news
+from .models import news,sites,source
 
 
 News = news.News
+Sites = sites.Sites
+Source = source.Source
 
 #getting api key
 api_key = 'fee3b3e955374e4e87747fef4b303740'
