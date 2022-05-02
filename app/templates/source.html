@@ -8,15 +8,17 @@
 </head>
 <body>
     <h1>Movie page test</h1>
-    {% for media in medias %}
-
-            <img src="{{ media.urlToImage }}" alt="">
-            <h3>{{ media.title }}</h3>
-            <p>{{ media.content }}</p>
-            <p>{{ media.publishedAt }}</p>
-            
+    <ul>
+        {% for media in medias %}
+            <li>
+                <img src="{{ media.urlToImage }}" alt="">
+                <h3>{{ media.title }}</h3>
+                <p>{{ media.content }}</p>
+                <p>{{ media.publishedAt }}</p>
+            </li> 
 
 
         {% endfor %}
+    </ul>
 </body>
 </html>
