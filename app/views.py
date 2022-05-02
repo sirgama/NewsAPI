@@ -59,4 +59,4 @@ def sports():
 def science():
     
     sciences = get_everything('science') 
-    return render_template('science.html', science = sciences)
+    return render_template('science.html', sciences = sciences)
