@@ -9,7 +9,7 @@ from .models import News, Sites, Source, Everything
 # Everything = everything.Everything
 
 #getting api key
-api_key = '8fa07fb5e25746778babb1bbccd84292'
+api_key = 'fee3b3e955374e4e87747fef4b303740'
 
 #getting news base url
 base_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
